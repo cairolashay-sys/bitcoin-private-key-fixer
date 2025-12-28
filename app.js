@@ -1,4 +1,4 @@
-const yargs = require('yargs')
+const yargs = require('yargs/yargs')(process.argv.slice(2))
 const qrcode = require('qrcode-terminal')
 
 const utils = require('./utils')
@@ -43,7 +43,7 @@ if (utils.isRealWIF(argv.publicAddress, argv.privateKey)) {
 
     if (argv.privateKey.length < pkFullLength) {
       found = fixMissingEnd(argv.publicAddress, argv.privateKey)
-    } else if (~argv.privateKey.indexOf(wildcard)){
+    } else if (~argv.privateKey.indexOf(wildcard)) {
       found = fixMissing(argv.publicAddress, argv.privateKey)
     } else {
       found = fixTypo(argv.publicAddress, argv.privateKey)

@@ -1,4 +1,4 @@
-const expect = require('expect')
+const expect = (require('expect').default || require('expect'))
 
 const fixMissingEnd = require('./fix-missing-end')
 

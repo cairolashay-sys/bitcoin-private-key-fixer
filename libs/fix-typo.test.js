@@ -1,4 +1,4 @@
-const expect = require('expect')
+const expect = (require('expect').default || require('expect'))
 
 const fixTypo = require('./fix-typo.js')
 const replaceAt = require('../utils').replaceAt
@@ -16,7 +16,7 @@ describe('Fix single typo for compressed WIF', () => {
   })
 
   it('should fix typo if it is the last char', () => {
-    let index = privateKey.length - 1
+    const index = privateKey.length - 1
     expect(fixTypo(publicKey, replaceAt(privateKey, index, 'V'))).toEqual(privateKey)
   })
 })
@@ -34,7 +34,7 @@ describe('Fix single typo for uncompressed WIF', () => {
   })
 
   it('should fix typo if it is the last char', () => {
-    let index = privateKey.length - 1
+    const index = privateKey.length - 1
     expect(fixTypo(publicKey, replaceAt(privateKey, index, 'V'))).toEqual(privateKey)
   })
 })

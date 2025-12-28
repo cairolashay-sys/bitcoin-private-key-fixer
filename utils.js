@@ -35,8 +35,8 @@ function replaceAt (string, index, replace) {
 }
 
 module.exports = {
-  isCompressedWIF: isCompressedWIF,
-  isRealWIF: isRealWIF,
-  log: log,
-  replaceAt: replaceAt
+  isCompressedWIF,
+  isRealWIF,
+  log,
+  replaceAt
 }

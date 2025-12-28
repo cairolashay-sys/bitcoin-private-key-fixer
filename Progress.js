@@ -1,8 +1,8 @@
 class Progress {
-  constructor(possibleVariations) {
+  constructor (possibleVariations) {
     this.possibleVariations = possibleVariations
     this.tries = 0
-    this.percent
+    this.percent = 0
   }
 
   static clear () {
@@ -17,7 +17,7 @@ class Progress {
 
   update () {
     this.tries++
-    let currPercent = Math.round(this.tries / this.possibleVariations * 100)
+    const currPercent = Math.round(this.tries / this.possibleVariations * 100)
 
     if (this.percent !== currPercent) {
       this.percent = currPercent
